@@ -9,6 +9,7 @@ object TryOps {
     def toRight[L](left: L): Either[L, A] = {
       tryValue.map(Right(_)).getOrElse(Left(left))
     }
+
   }
 
 }

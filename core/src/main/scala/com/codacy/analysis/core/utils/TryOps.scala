@@ -4,7 +4,7 @@ import scala.util.Try
 
 object TryOps {
 
-  implicit class TryOps[A](tryValue: Try[A]) {
+  implicit class Triceratops[A](tryValue: Try[A]) {
 
     def toRight[L](left: L): Either[L, A] = {
       tryValue.map(Right(_)).getOrElse(Left(left))

@@ -39,10 +39,7 @@ object Formatter {
             file: Option[File] = Option.empty,
             printStream: Option[PrintStream] = Option.empty): Formatter = {
 
-    val builder = allFormatters.find(_.name.equalsIgnoreCase(name)).getOrElse {
-      logger.warn(s"Could not find formatter for name $name. Using ${defaultFormatter.name} as fallback.")
-      defaultFormatter
-    }
+    val builder = allFormatters.find(_.name.equalsIgnoreCase(name)).get
 
     val stream = file.map(asPrintStream).orElse(printStream).getOrElse(defaultPrintStream)
 

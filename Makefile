@@ -5,9 +5,6 @@ PREFIX ?= /usr/local
 test:
 	scripts/test.sh
 
-lint:
-	scripts/lint.sh
-
 compile:
 	scripts/compile.sh
 

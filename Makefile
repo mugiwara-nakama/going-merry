@@ -9,13 +9,6 @@ lint:
 	scripts/lint.sh
 
 compile:
-	scripts/compile.sh
-
-install:
-	scripts/check_requirements.sh
-	docker pull codacy/codacy-analysis-cli:stable
-	mkdir -p $(DESTDIR)$(PREFIX)/bin
-	install -m 0755 bin/codacy-analysis-cli.sh $(DESTDIR)$(PREFIX)/bin/codacy-analysis-cli
 
 uninstall:
 	$(RM) $(DESTDIR)$(PREFIX)/bin/codacy-analysis-cli
